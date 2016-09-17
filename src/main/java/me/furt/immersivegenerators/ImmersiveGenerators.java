@@ -1,8 +1,11 @@
 package me.furt.immersivegenerators;
 
+import blusunrize.immersiveengineering.api.MultiblockHandler;
+import me.furt.immersivegenerators.blocks.multiblocks.MultiblockCoalGenerator;
 import me.furt.immersivegenerators.init.ModItems;
 import me.furt.immersivegenerators.proxy.IProxy;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
@@ -31,7 +34,7 @@ public class ImmersiveGenerators {
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		
+		MultiblockHandler.registerMultiblock(MultiblockCoalGenerator.instance);
 	}
 	
 	@EventHandler
@@ -57,7 +60,7 @@ public class ImmersiveGenerators {
 
 		@Override
 		public ItemStack getIconItemStack() {
-			return new ItemStack(ModItems.TEST, 1);
+			return new ItemStack(Items.COAL, 1);
 		}
 	};
 
