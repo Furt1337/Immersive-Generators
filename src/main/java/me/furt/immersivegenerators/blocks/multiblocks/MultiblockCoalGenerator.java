@@ -1,4 +1,4 @@
-package me.furt.immersivegenerators.multistructure;
+package me.furt.immersivegenerators.blocks.multiblocks;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -9,8 +9,19 @@ import net.minecraft.world.World;
 import blusunrize.immersiveengineering.api.MultiblockHandler.IMultiblock;
 import blusunrize.immersiveengineering.api.crafting.IngredientStack;
 
-public class StructureGenerator implements IMultiblock {
+public class MultiblockCoalGenerator implements IMultiblock {
 
+	public static MultiblockCoalGenerator instance = new MultiblockCoalGenerator();
+	static ItemStack[][][] structure = new ItemStack[6][5][4];
+	static{
+		for(int h=0;h<6;h++)
+			for(int l=0;l<5;l++)
+				for(int w=0;w<4;w++)
+				{
+						
+				}
+	}
+	
 	@Override
 	public boolean canRenderFormedStructure() {
 		// TODO Auto-generated method stub
