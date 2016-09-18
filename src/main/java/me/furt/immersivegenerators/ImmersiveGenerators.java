@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
-@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, dependencies = "after:immersiveengineering;before:JEI")
+@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, dependencies = Reference.DEPS)
 public class ImmersiveGenerators {
 	
 	@Instance(Reference.MODID)
@@ -29,17 +29,18 @@ public class ImmersiveGenerators {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		
+		proxy.preInit();
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		MultiblockHandler.registerMultiblock(MultiblockCoalGenerator.instance);
+		proxy.init();
 	}
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		
+		proxy.postInit();
 	}
 	
 	@EventHandler
