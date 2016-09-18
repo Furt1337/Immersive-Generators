@@ -10,13 +10,14 @@ import blusunrize.immersiveengineering.api.MultiblockHandler.IMultiblock;
 import blusunrize.immersiveengineering.api.crafting.IngredientStack;
 
 public class MultiblockCoalGenerator implements IMultiblock {
+	private static int height = 6,length = 5,width = 4;
 
 	public static MultiblockCoalGenerator instance = new MultiblockCoalGenerator();
-	static ItemStack[][][] structure = new ItemStack[6][5][4];
+	static ItemStack[][][] structure = new ItemStack[height][length][width];
 	static{
-		for(int h=0;h<6;h++)
-			for(int l=0;l<5;l++)
-				for(int w=0;w<4;w++)
+		for(int h=0;h<height;h++)
+			for(int l=0;l<length;l++)
+				for(int w=0;w<width;w++)
 				{
 						
 				}
