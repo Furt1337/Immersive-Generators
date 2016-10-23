@@ -3,6 +3,7 @@ package me.furt.immersivegenerators.entity.tile;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.furt.immersivegenerators.blocks.multiblocks.MultiblockCoalGenerator;
 import me.furt.immersivegenerators.recipe.RecipeCoalGenerator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -20,11 +21,9 @@ import blusunrize.immersiveengineering.common.blocks.metal.TileEntityMultiblockM
 
 public class TileEntityCoalGenerator extends TileEntityMultiblockMetal<TileEntityCoalGenerator,RecipeCoalGenerator> implements ISoundTile, IAdvancedSelectionBounds,IAdvancedCollisionBounds{
 
-	public TileEntityCoalGenerator(IMultiblock mutliblockInstance,
-			int[] structureDimensions, int energyCapacity,
-			boolean redstoneControl) {
-		super(mutliblockInstance, structureDimensions, energyCapacity, redstoneControl);
-		// TODO Auto-generated constructor stub
+	public TileEntityCoalGenerator() {
+		// TODO add proper dimensions
+		super(MultiblockCoalGenerator.instance, new int[]{3,4,7}, 3200, true);
 	}
 
 	@Override
@@ -89,8 +88,7 @@ public class TileEntityCoalGenerator extends TileEntityMultiblockMetal<TileEntit
 	}
 
 	@Override
-	public boolean additionalCanProcessCheck(
-			blusunrize.immersiveengineering.common.blocks.metal.TileEntityMultiblockMetal.MultiblockProcess<RecipeCoalGenerator> arg0) {
+	public boolean additionalCanProcessCheck(MultiblockProcess<RecipeCoalGenerator> arg0) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -132,8 +130,7 @@ public class TileEntityCoalGenerator extends TileEntityMultiblockMetal<TileEntit
 	}
 
 	@Override
-	public float getMinProcessDistance(
-			blusunrize.immersiveengineering.common.blocks.metal.TileEntityMultiblockMetal.MultiblockProcess<RecipeCoalGenerator> arg0) {
+	public float getMinProcessDistance(MultiblockProcess<RecipeCoalGenerator> arg0) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -169,8 +166,7 @@ public class TileEntityCoalGenerator extends TileEntityMultiblockMetal<TileEntit
 	}
 
 	@Override
-	public void onProcessFinish(
-			blusunrize.immersiveengineering.common.blocks.metal.TileEntityMultiblockMetal.MultiblockProcess<RecipeCoalGenerator> arg0) {
+	public void onProcessFinish(MultiblockProcess<RecipeCoalGenerator> arg0) {
 		// TODO Auto-generated method stub
 		
 	}
